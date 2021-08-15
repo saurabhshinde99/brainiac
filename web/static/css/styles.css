@@ -11613,11 +11613,16 @@ footer a:hover, footer a:active, footer a:focus {
   box-shadow: 0px 0px 10px 2px grey;
   margin-top: 40px;
 }
+a.text-white:hover {
+  color: black !important;
+}
+.contactus p > i{
+  padding-right: 10px;
+}
 .soacing.believe{
   margin-bottom: 40px;
 }
 .centered {
-  position: absolute;
   top: 50%;
   left: 50%;
   color: #FFF;

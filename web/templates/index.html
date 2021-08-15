@@ -1,282 +1,441 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Brainiac Healthcare PVT LTD</title>
-        <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
-        <link rel="stylesheet" type="text/css" href="{% static 'assets/favicon.ico' %}">
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Google fonts-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <!-- <link href="css/styles.css" rel="stylesheet" /> -->
-        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-        <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/new.css' %}"> -->
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js'></script>
-        
-    </head>
-    <body id="page-top">
-        <div class="toast fade hide" data-delay="3000" role="alert" aria-live="assertive" aria-atomic="true" style="position: fixed; top: 50;right: 0;z-index: 5;">
-            <div class="toast-header bg-danger text-white px-2 pt-2">
-                <strong id="toast-header" class="mr-auto">Error</strong>
-    
-                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="toast-body bg-danger px-2 py-1" style="color: white !important;">
-    
-            </div>
-        </div>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
-            <div class="container px-5">
-                <a class="navbar-brand fw-bold" href="#page-top"><img src="{% static 'img/clogo.jpeg' %}" alt="" width="150" height="42"></a>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Brainiac Healthcare PVT LTD</title>
+    <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'assets/favicon.ico' %}"
+    />
+    <!-- Bootstrap icons-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Google fonts-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/new.css' %}"> -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+  <body id="page-top">
+    <div
+      class="toast fade hide"
+      data-delay="3000"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      style="position: fixed; top: 50; right: 0; z-index: 5"
+    >
+      <div class="toast-header bg-danger text-white px-2 pt-2">
+        <strong id="toast-header" class="mr-auto">Error</strong>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="bi-list"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                        <!--<li class="nav-item"><a class="nav-link me-lg-3" href="#features">Features</a></li>-->
-                        <!--<li class="nav-item"><a class="nav-link me-lg-3" href="#download">Download</a></li>-->
-                    </ul>
-                    <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
-                        <span class="d-flex align-items-center">
-                            <i class="bi-chat-text-fill me-2"></i>
-                            <span class="small">Get in touch</span>
-                        </span>
-                    </button>
-                </div>
-            </div>
-        </nav>
-        <!-- Mashead header-->
-        <div class="mySlides w3-display-container w3-center">
-            <img src="{% static 'img/homepage.jpg' %}" style="width:100%;height: auto;">
-            <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-                <h2 class="centered">We innovate healthcare products.</h2> 
-            </div>
+        <button
+          type="button"
+          class="ml-2 mb-1 close"
+          data-dismiss="toast"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div
+        class="toast-body bg-danger px-2 py-1"
+        style="color: white !important"
+      ></div>
+    </div>
+    <!-- Navigation-->
+    <nav
+      class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm"
+      id="mainNav"
+    >
+      <div class="container px-5">
+        <a class="navbar-brand fw-bold" href="#page-top"
+          ><img
+            src="{% static 'img/clogo.jpeg' %}"
+            alt=""
+            width="150"
+            height="42"
+        /></a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+            <!--<li class="nav-item"><a class="nav-link me-lg-3" href="#features">Features</a></li>-->
+            <!--<li class="nav-item"><a class="nav-link me-lg-3" href="#download">Download</a></li>-->
+          </ul>
+          <button
+            class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0"
+            data-bs-toggle="modal"
+            data-bs-target="#feedbackModal"
+          >
+            <span class="d-flex align-items-center">
+              <i class="bi-chat-text-fill me-2"></i>
+              <span class="small">Get in touch</span>
+            </span>
+          </button>
         </div>
-        <!-- Our-vision aside-->
-        <div class="text-center our-vision soacing">
-            <h1>Our Vision</h1>
-            <aside class="text-center bg-gradient-primary-to-secondary">
-                <div class="container px-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-xl-8">
-                            <div class="h2 fs-1 text-white mb-4">Growing healtcare industry through innovations</div>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-        </div>
-        <!-- Product aside-->
-        <div class="text-center product soacing">
-            <h1>Product</h1>
-            <aside class="text-center bg-gradient-primary-to-secondary">
-                <div class="container px-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-xl-8">
-                            <div class="h2 fs-1 text-white mb-4">An innovative & user-friendly capnometer</div>
-                            <a class="btn btn-outline-light py-3 px-4 rounded-pill" >Coming soon</a>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-        </div>
-        <!-- We believe in aside-->
-        <div class="text-center believe soacing">
-            <h1>We believe in</h1>
-            <aside class="text-center bg-gradient-primary-to-secondary">
-                <div class="container px-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-xl-8">
-                            <p class="h2 fs-1 text-white mb-4">1. Quality healthcare solutions</p>
-                            <p class="h2 fs-1 text-white mb-4">2. Precise & accurate medical devices</p>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-        </div>
-        
-        <!-- Remove the container if you want to extend the Footer to full width. -->
-<!-- <div class="container my-5"> -->
-    <!-- Footer -->
-    <footer class="text-center text-lg-start text-white custom-footer" style="background-color: #929fba">
-      <!-- Grid container -->
-      <div class="container p-4">
-          <div class="row">
-            <!-- Grid column -->
-            <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-4">
-              <h6 class="text-uppercase mb-4 font-weight-bold">
-                Company name
-              </h6>
-              <p>Brainiac Healthcare Pvt Ltd.</p>
-            </div>
-            <!-- Grid column -->
-            <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-4">
-              <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-              <p><i class="fas fa-home mr-3"></i> Ahmedabad, Gujarat, India-382415</p>
-              <p><i class="fas fa-envelope mr-3"></i><a href="mailto:contact@brainiachealthcare.com"> contact@brainiachealthcare.com</a></p>
-              <p><i class="fas fa-phone mr-3"></i><a href="tel:+918141671751"> +91 81416 71751</a></p>
-            </div>
-            <!-- Grid column -->
-  
-            <!-- Grid column -->
-            <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-4">
-              <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
-  
-              <!-- Facebook -->
-              <a
-                 class="btn btn-primary btn-floating m-1"
-                 style="background-color: #3b5998"
-                 target="_blank"
-                 href="https://www.facebook.com/profile.php?id=100071543324793"
-                 role="button"
-                 ><i class="fab fa-facebook"></i
-                ></a>
-              
-                <!-- Instagram -->
-              <a
-                 class="btn btn-primary btn-floating m-1"
-                 style="background-color: #ac2bac"
-                 target="_blank"
-                 href="https://www.instagram.com/brainiac_healthcare/"
-                 role="button"
-                 ><i class="fab fa-instagram"></i
-                ></a>
-  
-              <!-- Linkedin -->
-              <a
-                 class="btn btn-primary btn-floating m-1"
-                 target="_blank"
-                 style="background-color: #0082ca"
-                 href="https://www.linkedin.com/company/brainiac-healthcare-pvt-ltd/"
-                 role="button"
-                 ><i class="fab fa-linkedin-in"></i
-                ></a>
+      </div>
+    </nav>
+    <!-- Mashead header-->
+    <div class="mySlides w3-display-container w3-center" style="position: relative;">
+      <img
+        src="{% static 'img/homepage.jpg' %}"
+        style="width: 100%; height: auto"
+      />
+      <div
+        class="
+          w3-display-bottommiddle
+          w3-container
+          w3-text-white
+          w3-padding-32
+          w3-hide-small
+        "
+      >
+        <h2 class="centered" style="position:absolute;">We innovate healthcare products.</h2>
+      </div>
+    </div>
+    <!-- Our-vision aside-->
+    <div class="text-center our-vision soacing">
+      <h1>Our Vision</h1>
+      <aside class="text-center bg-gradient-primary-to-secondary">
+        <div class="container px-5">
+          <div class="row gx-5 justify-content-center">
+            <div class="col-xl-8">
+              <div class="h2 fs-1 text-white mb-4">
+                Growing healtcare industry through innovations.
+              </div>
             </div>
           </div>
+        </div>
+      </aside>
+    </div>
+    <!-- Product aside-->
+    <div class="text-center product soacing">
+      <h1>Product</h1>
+      <aside class="text-center bg-gradient-primary-to-secondary">
+        <div class="container px-5">
+          <div class="row gx-5 justify-content-center">
+            <div class="col-xl-8">
+              <div class="h2 fs-1 text-white mb-4">
+                An innovative & user-friendly capnometer
+              </div>
+              <a class="btn btn-outline-light py-3 px-4 rounded-pill"
+                >Coming soon</a
+              >
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <!-- We believe in aside-->
+    <div class="text-center believe soacing">
+      <h1>We believe in</h1>
+      <aside class="text-center bg-gradient-primary-to-secondary">
+        <div class="container px-5">
+          <div class="row gx-5 justify-content-center">
+            <div class="col-xl-8" style="text-align: left;">
+              <p class="h2 fs-1 text-white mb-4">
+                1. Quality healthcare solutions
+              </p>
+              <p class="h2 fs-1 text-white mb-4">
+                2. Precise & accurate medical devices
+              </p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+    <!-- <div class="container my-5"> -->
+    <!-- Footer -->
+    <footer
+      class="text-center text-lg-start text-white custom-footer"
+      style="background-color: #929fba"
+    >
+      <!-- Grid container -->
+      <div class="container p-4">
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-4">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Company name</h6>
+            <p>Brainiac Healthcare Pvt Ltd.</p>
+          </div>
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-4 contactus">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+            <p>
+              <i class="fas fa-home mr-3"></i> Ahmedabad, Gujarat, India-382415
+            </p>
+            <p>
+              <i class="fas fa-envelope mr-3"></i
+              ><a class="text-white" href="mailto:contact@brainiachealthcare.com">contact@brainiachealthcare.com</a
+              >
+            </p>
+            <p>
+              <i class="fas fa-phone mr-3"></i
+              ><a class="text-white" href="tel:+918141671751">+91 81416 71751</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-4">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+
+            <!-- Facebook -->
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style="background-color: #3b5998"
+              target="_blank"
+              href="https://www.facebook.com/profile.php?id=100071543324793"
+              role="button"
+              ><i class="fab fa-facebook"></i
+            ></a>
+
+            <!-- Instagram -->
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style="background-color: #ac2bac"
+              target="_blank"
+              href="https://www.instagram.com/brainiac_healthcare/"
+              role="button"
+              ><i class="fab fa-instagram"></i
+            ></a>
+
+            <!-- Linkedin -->
+            <a
+              class="btn btn-primary btn-floating m-1"
+              target="_blank"
+              style="background-color: #0082ca"
+              href="https://www.linkedin.com/company/brainiac-healthcare-pvt-ltd/"
+              role="button"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
       </div>
-      <div class="text-center p-3"
-           style="background-color: rgba(0, 0, 0, 0.2)"
-           >
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
         © 2021 Copyright:
         <a class="text-white" href="https://www.brainiachealthcare.com/"
-           >Brainiac Healthcare Pvt Ltd.</a
-          >
+          >Brainiac Healthcare Pvt Ltd.</a
+        >
       </div>
     </footer>
     <!-- Footer -->
-  <!-- </div> -->
-  <!-- End of .container -->
+    <!-- </div> -->
+    <!-- End of .container -->
 
-        <!-- Feedback Modal-->
-        <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header bg-gradient-primary-to-secondary p-4">
-                        <h5 class="modal-title font-alt text-white" id="feedbackModalLabel">Send feedback</h5>
-                        <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body border-0 p-4">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id="contactForm" method="POST">
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control name" name="name" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Full name</label>
-                            </div>
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control email" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Email address</label>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control phone" name="contact" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Phone number</label>
-                            </div>
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control message" name="message" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Message</label>
-                            </div>
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <div class="d-grid"><button class="btn btn-primary rounded-pill btn-lg" id="submitButton" type="button">Submit</button></div>
-                        </form>
-                    </div>
+    <!-- Feedback Modal-->
+    <div
+      class="modal fade"
+      id="feedbackModal"
+      tabindex="-1"
+      aria-labelledby="feedbackModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-gradient-primary-to-secondary p-4">
+            <h5 class="modal-title font-alt text-white" id="feedbackModalLabel">
+              Send feedback
+            </h5>
+            <button
+              class="btn-close btn-close-white"
+              type="button"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body border-0 p-4">
+            <!-- * * * * * * * * * * * * * * *-->
+            <!-- * * SB Forms Contact Form * *-->
+            <!-- * * * * * * * * * * * * * * *-->
+            <!-- This form is pre-integrated with SB Forms.-->
+            <!-- To make this form functional, sign up at-->
+            <!-- https://startbootstrap.com/solution/contact-forms-->
+            <!-- to get an API token!-->
+            <form id="contactForm" method="POST">
+              {% csrf_token %}
+              <!-- Name input-->
+              <div class="form-floating mb-3">
+                <input
+                  class="form-control name"
+                  name="name"
+                  id="name"
+                  type="text"
+                  placeholder="Enter your name..."
+                  data-sb-validations="required"
+                />
+                <label for="name">Full name</label>
+              </div>
+              <!-- Email address input-->
+              <div class="form-floating mb-3">
+                <input
+                  class="form-control email"
+                  id="email"
+                  type="email"
+                  placeholder="name@example.com"
+                  data-sb-validations="required,email"
+                />
+                <label for="email">Email address</label>
+              </div>
+              <!-- Phone number input-->
+              <div class="form-floating mb-3">
+                <input
+                  class="form-control phone"
+                  name="contact"
+                  id="phone"
+                  type="tel"
+                  placeholder="(123) 456-7890"
+                  data-sb-validations="required"
+                />
+                <label for="phone">Phone number</label>
+              </div>
+              <!-- Message input-->
+              <div class="form-floating mb-3">
+                <textarea
+                  class="form-control message"
+                  name="message"
+                  id="message"
+                  type="text"
+                  placeholder="Enter your message here..."
+                  style="height: 10rem"
+                  data-sb-validations="required"
+                ></textarea>
+                <label for="message">Message</label>
+              </div>
+              <div class="d-none" id="submitErrorMessage">
+                <div class="text-center text-danger mb-3">
+                  Error sending message!
                 </div>
-            </div>
+              </div>
+              <!-- Submit Button-->
+              <div class="d-grid">
+                <button
+                  class="btn btn-primary rounded-pill btn-lg"
+                  id="submitButton"
+                  type="button"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-    <script>
-        $(document).ready(function(data){
-            $("#submitButton").on('click', function() {
-                var phone = $('#phone').val()
-                var name = $('#name').val()
-                var email = $('#email').val()
-                var msg = $('#message').val()
-                console.log(phone)
-                if (name == "") {
-                error_message = "Required Inputs not filled : Name"
-                $(".email").removeClass("is-invalid")
-                $(".message").removeClass("is-invalid")
-                $(".phone").removeClass("is-invalid")
-                $(".name").addClass("is-invalid")
-                $(".toast-body").addClass('text-danger').text(error_message)
-                $(".toast").toast('show')
-            } else if (email == "") {
-                error_message = "Required Inputs not filled : Email"
-                $(".email").addClass("is-invalid")
-                $(".phone").removeClass("is-invalid")
-                $(".name").removeClass("is-invalid")
-                $(".message").removeClass("is-invalid")
-                $(".toast-body").addClass('text-danger').text(error_message)
-                $(".toast").toast('show')
-            } else if (phone == "") {
-                error_message = "Required Inputs not filled : Phone"
-                $(".email").removeClass("is-invalid")
-                $(".name").removeClass("is-invalid")
-                $(".message").removeClass("is-invalid")
-                $(".phone").addClass("is-invalid")
-                $(".toast-body").addClass('text-white').text(error_message)
-                $(".toast").toast('show')
-            } else if (msg == "") {
-                error_message = "Required Inputs not filled : message"
-                $(".email").removeClass("is-invalid")
-                $(".phone").removeClass("is-invalid")
-                $(".name").removeClass("is-invalid")
-                $(".message").addClass("is-invalid")
-                $(".toast-body").addClass('text-danger').text(error_message)
-                $(".toast").toast('show')
-            } else {
-                console.log(message)
-            }
-            })
-        })
-    </script>
-    
+      </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  <script>
+          $(document).ready(function(data){
+              $("#submitButton").on('click', function() {
+                  var phone = $('#phone').val()
+                  var name = $('#name').val()
+                  var email = $('#email').val()
+                  var msg = $('#message').val()
+                  if (name == "") {
+                  error_message = "Required Inputs not filled : Name"
+                  $(".email").removeClass("is-invalid")
+                  $(".message").removeClass("is-invalid")
+                  $(".phone").removeClass("is-invalid")
+                  $(".name").addClass("is-invalid")
+                  $(".toast-body").addClass('text-danger').text(error_message)
+                  $(".toast").toast('show')
+              } else if (email == "") {
+                  error_message = "Required Inputs not filled : Email"
+                  $(".email").addClass("is-invalid")
+                  $(".phone").removeClass("is-invalid")
+                  $(".name").removeClass("is-invalid")
+                  $(".message").removeClass("is-invalid")
+                  $(".toast-body").addClass('text-danger').text(error_message)
+                  $(".toast").toast('show')
+              } else if (phone == "") {
+                  error_message = "Required Inputs not filled : Phone"
+                  $(".email").removeClass("is-invalid")
+                  $(".name").removeClass("is-invalid")
+                  $(".message").removeClass("is-invalid")
+                  $(".phone").addClass("is-invalid")
+                  $(".toast-body").addClass('text-white').text(error_message)
+                  $(".toast").toast('show')
+              } else if (msg == "") {
+                  error_message = "Required Inputs not filled : message"
+                  $(".email").removeClass("is-invalid")
+                  $(".phone").removeClass("is-invalid")
+                  $(".name").removeClass("is-invalid")
+                  $(".message").addClass("is-invalid")
+                  $(".toast-body").addClass('text-danger').text(error_message)
+                  $(".toast").toast('show')
+              } else {
+                  $.post("/contact",{"name":name,"phone":phone,"email":email,"msg":msg}).then(function(data){
+                      json_data=JSON.parse(data);
+                      my_data=json_data;
+                      if (json_data['status']==200){
+                        //   swal("Submitted Successfully!", "", "success")
+                          swal("Submitted succeessfully!", {
+                                    button: true,
+                                    icon: "success",
+                                })
+                                .then(() => {
+                                    window.location.replace('')
+                                })
+                        
+                      }
+                      
+                  })
+              }
+              })
+          })
+  </script>
 </html>

@@ -10,8 +10,28 @@ def home(request):
     return render(request,'index.html')
 
 @login_required
+@csrf_exempt
 def contact(request):
-    return HttpResponse('contact')
+    if request.method == 'GET':
+        return HttpResponse("Bad Request")
+    try:
+        data={}
+        response=dict(request.POST)
+        name=request.POST['name']
+        phone=request.POST['phone']
+        email=request.POST['email']
+        msg=request.POST['msg']
+        c=Contact(name=name, phone=phone, email=email,msg=msg)
+        c.save()
+        data['status']=200
+        data['msg']="Submited Successfully"
+        
+    except Exception as e:
+        data = {}
+        data["status"] = 400
+        data["msg"]=str(e)
+    data = json.dumps(data, indent=2)
+    return HttpResponse(data)
     
 @login_required
 def user_details(request):
